@@ -15,12 +15,12 @@ export function Hero() {
         }} />
       </div>
 
-      {/* Animated Gold Line - Hidden on mobile for cleaner look */}
+      {/* Animated Gold Line */}
       <motion.div
         initial={{ height: 0 }}
         animate={{ height: "30%" }}
         transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-        className="absolute left-1/2 top-0 w-px bg-gradient-to-b from-gold/0 via-gold to-gold/0 hidden md:block"
+        className="absolute left-1/2 top-0 w-px bg-gradient-to-b from-gold/0 via-gold to-gold/0"
       />
 
       <div className="container mx-auto px-4 md:px-6 pt-20 md:pt-24 pb-8 md:pb-12 relative z-10">
