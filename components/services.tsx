@@ -102,6 +102,8 @@ export function Services() {
               <button
                 onClick={() => setMobileExpandedService(mobileExpandedService === index ? null : index)}
                 className="w-full p-4 flex items-center justify-between text-left"
+                aria-expanded={mobileExpandedService === index}
+                aria-controls={`service-mobile-panel-${index}`}
               >
                 <div className="flex items-center gap-3">
                   <div className={`p-2 transition-all duration-300 ${
@@ -119,30 +121,30 @@ export function Services() {
                 }`} />
               </button>
               
-              <motion.div
-                initial={false}
-                animate={{ 
-                  height: mobileExpandedService === index ? 'auto' : 0,
-                  opacity: mobileExpandedService === index ? 1 : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <div className="px-4 pb-4 pt-2 border-t border-border/50">
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-3xl font-serif text-gold">{service.stat}</span>
-                    <span className="text-xs text-muted-foreground">{service.statLabel}</span>
+              {mobileExpandedService === index && (
+                <motion.div
+                  id={`service-mobile-panel-${index}`}
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-4 pb-4 pt-2 border-t border-border/50">
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-3xl font-serif text-gold">{service.stat}</span>
+                      <span className="text-xs text-muted-foreground">{service.statLabel}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {service.features.map((feature) => (
+                        <span key={feature} className="px-3 py-1.5 bg-gold/10 text-charcoal text-xs font-medium">
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((feature) => (
-                      <span key={feature} className="px-3 py-1.5 bg-gold/10 text-charcoal text-xs font-medium">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              )}
             </motion.div>
           ))}
         </div>
