@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef, useState, type ReactNode } from "react"
 import { Plus, Minus } from "lucide-react"
 
 const faqs = [
@@ -19,21 +19,28 @@ const faqs = [
   },
   {
     question: "¿Qué documentación necesito?",
-    answer: "Generalmente necesitás: la negativa de la obra social (puede ser verbal o escrita), los estudios médicos que justifiquen el tratamiento, la prescripción del médico tratante, y tu DNI. En la consulta inicial te indicamos exactamente qué necesitamos según tu caso."
+    answer: (
+      <>
+        Generalmente necesitás: la negativa de la obra social (puede ser verbal o escrita), los estudios médicos que justifiquen el tratamiento, la prescripción del médico tratante, y tu DNI. En la consulta inicial te indicamos exactamente qué necesitamos según tu caso.{" "}
+        <strong className="font-semibold text-charcoal">
+          Si no tenés la negativa, la podés obtener con nosotros.
+        </strong>
+      </>
+    )
   },
   {
-    question: "¿Tienen costo las consultas?",
-    answer: "La primera consulta es sin cargo. Analizamos tu caso, te explicamos tus opciones y recién ahí decidimos juntos cómo avanzar. Nuestros honorarios se acuerdan según cada caso particular."
+    question: "¿Cuánto sale un amparo?",
+    answer: "Sabemos que es algo que preocupa mucho al momento de iniciar un amparo, no todos los amparos son iguales y no siempre es necesario llegar al amparo, te ofrecemos una entrevista virtual orientativa para que veamos si necesitas nuestros servicios y los costos."
   },
   {
     question: "¿Qué pasa si mi obra social no responde a los reclamos?",
-    answer: "La falta de respuesta o demora excesiva se considera una negativa tácita. Esto también es fundamento suficiente para iniciar un amparo. No necesitás una negativa formal por escrito."
+    answer: "La falta de respuesta o demora excesiva se considera una negativa. pero sera necesario realizar una intimacion formal y para esto necesitas nuestro asesoramiento para que se realice de manera correcta y eficiente "
   }
 ]
 
 function FAQItem({ question, answer, isOpen, onClick, index, isInView }: {
   question: string
-  answer: string
+  answer: ReactNode
   isOpen: boolean
   onClick: () => void
   index: number

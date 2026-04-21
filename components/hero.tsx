@@ -15,14 +15,6 @@ export function Hero() {
         }} />
       </div>
 
-      {/* Animated Gold Line */}
-      <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: "30%" }}
-        transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-        className="absolute left-1/2 top-0 w-px bg-gradient-to-b from-gold/0 via-gold to-gold/0"
-      />
-
       <div className="container mx-auto px-4 md:px-6 pt-20 md:pt-24 pb-8 md:pb-12 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Logo Animation */}
@@ -33,11 +25,11 @@ export function Hero() {
             className="mb-6 md:mb-8 flex justify-center"
           >
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LATORRE%20SUAREZ%20LOGO-02-isxjqMBDcp4HgnaLvI5DxIXlpSNSqB.png"
+              src="/logo.png"
               alt="Latorre & Suárez"
               width={120}
               height={120}
-              className="w-20 h-20 md:w-32 md:h-32"
+              className="w-16 h-16 md:w-24 md:h-24"
               priority
             />
           </motion.div>
@@ -108,12 +100,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-12 md:mt-20 pt-8 md:pt-12 border-t border-gold/20"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-8">
               {[
                 { number: "+10", label: "Años experiencia" },
                 { number: "+500", label: "Casos resueltos" },
-                { number: "100%", label: "Cobertura lograda" },
-                { number: "24hs", label: "Respuesta rápida" },
+                { number: "95%", label: "Cobertura lograda" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

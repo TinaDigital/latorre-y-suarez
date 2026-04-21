@@ -7,10 +7,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 const navLinks = [
-  { href: "#nosotras", label: "Nosotras" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#amparo", label: "El Amparo" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/about", label: "Nosotras" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#amparo", label: "El Amparo" },
+  { href: "/#contacto", label: "Contacto" },
 ]
 
 export function Header() {
@@ -52,7 +52,7 @@ export function Header() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 md:gap-3">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LATORRE%20SUAREZ%20LOGO-02-isxjqMBDcp4HgnaLvI5DxIXlpSNSqB.png"
+              src="/logo.png"
               alt="Latorre & Suárez Abogadas"
               width={50}
               height={50}
@@ -80,7 +80,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="#contacto"
+              href="/#contacto"
               className="bg-gold text-charcoal px-6 py-2.5 text-sm font-medium hover:bg-gold-dark transition-all duration-300 rounded-sm"
             >
               Consultar
@@ -177,7 +177,7 @@ export function Header() {
                   className="mt-4"
                 >
                   <Link
-                    href="#contacto"
+                    href="/#contacto"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="inline-flex items-center gap-2 bg-gold text-charcoal px-10 py-4 text-lg font-medium active:bg-gold-dark transition-all duration-300"
                   >

@@ -9,26 +9,26 @@ const steps = [
   {
     number: "01",
     icon: FileText,
-    title: "Consulta Inicial",
-    description: "Analizamos tu caso y te explicamos tus opciones legales sin compromiso."
+    title: "Consulta Telefónica",
+    description: "Evaluamos si tu caso es apto para amparo, te indicamos la documentación necesaria y coordinamos una cita presencial."
   },
   {
     number: "02",
     icon: Scale,
-    title: "Preparación del Amparo",
-    description: "Reunimos la documentación necesaria y preparamos la presentación judicial."
+    title: "Consulta Presencial",
+    description: "Traés la documentación, la revisamos juntas y realizamos la intimación previa a la obra social."
   },
   {
     number: "03",
     icon: Clock,
-    title: "Presentación Rápida",
-    description: "Iniciamos el proceso judicial de manera urgente para obtener una resolución veloz."
+    title: "Presentación del Amparo",
+    description: "Una vez cumplidas las etapas previas, presentamos la acción de amparo en el juzgado correspondiente."
   },
   {
     number: "04",
     icon: BadgeCheck,
-    title: "Cobertura Lograda",
-    description: "Obtenemos la resolución favorable que obliga a la obra social a cumplir."
+    title: "Resolución y cumplimiento",
+    description: "Esperamos la resolución judicial y el resultado del trámite iniciado, acompañando el proceso hasta su conclusión. Cada expediente tiene su propio ritmo y resultado."
   }
 ]
 

@@ -19,7 +19,7 @@ const services = [
     icon: Heart,
     title: "Discapacidad",
     subtitle: "Cobertura integral",
-    description: "Especialistas en cobertura integral para personas con condiciones de discapacidad. Te acompañamos desde el diagnóstico hasta obtener el CUD.",
+    description: "Especialistas en cobertura integral para personas con condiciones de discapacidad. Si tenés dudas para tramitar el CUD te podemos orientar.",
     features: ["Cobertura 100%", "Trámite de CUD", "Terapias especializadas"],
     stat: "100%",
     statLabel: "De cobertura por ley"
@@ -28,7 +28,7 @@ const services = [
     icon: FileCheck,
     title: "Cobertura PMO",
     subtitle: "Programa médico obligatorio",
-    description: "Las obras sociales deben cumplir con el Programa Médico Obligatorio. Te ayudamos a obtener lo que te corresponde por ley.",
+    description: "Las obras sociales y las empresas de medicina prepaga deben cumplir con el Programa Médico Obligatorio. Te ayudamos a obtener lo que te corresponde por ley.",
     features: ["Análisis de cobertura", "Reclamos formales", "Seguimiento continuo"],
     stat: "+500",
     statLabel: "Prestaciones obligatorias"
@@ -36,18 +36,20 @@ const services = [
   {
     icon: Users,
     title: "Asesoramiento Integral",
-    subtitle: "Acompañamiento completo",
-    description: "Te guiamos en todo el proceso, desde la primera consulta hasta la resolución favorable de tu caso.",
-    features: ["Consultas personales", "Videollamadas", "Seguimiento 24/7"],
-    stat: "24/7",
-    statLabel: "Disponibilidad"
+    subtitle: "Atención personal y dedicada",
+    description: "Acompañamos personalmente cada caso, desde la primera consulta hasta la resolución favorable, manteniendo comunicación directa y constante. Siempre vas a ser atendido por la misma abogada: si comenzaste con nosotras, seguís con nosotras, sin intermediarios.",
+    features: ["Consultas personales", "Videollamadas", "Comunicación directa y continua"],
+    stat: "100%",
+    statLabel: "Atención personalizada"
   }
 ]
 
 const coverageTypes = [
   { title: "Discapacidad", law: "Ley 24.901", description: "Sistema de prestaciones básicas para personas con discapacidad" },
   { title: "Diabetes", law: "Ley 23.753", description: "Cobertura total de medicación e insumos para diabéticos" },
-  { title: "Oncología", law: "Ley 26.689", description: "Cobertura integral para enfermedades poco frecuentes y oncológicas" },
+  { title: "Oncología", law: "Ley 26.689", description: "Cobertura integral para enfermedades oncológicas" },
+  { title: "Pacientes Trasplantados", law: "Ley 26.928", description: "Cobertura de medicamentos, estudios y atención para pacientes trasplantados" },
+  { title: "Enfermedades Poco Frecuentes", law: "Ley 26.689", description: "Cobertura específica para personas con enfermedades poco frecuentes" },
 ]
 
 export function Services() {
@@ -273,15 +275,15 @@ export function Services() {
               </h3>
             </div>
 
-            {/* Grid for both mobile and desktop */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            {/* Grid: md 3 cols; lg 6 cols + spans so la última fila (2 ítems) queda simétrica */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
               {coverageTypes.map((item, index) => (
                 <motion.div
                   key={item.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="group text-center relative"
+                  className={`group text-center relative ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}
                 >
                   {/* Decorative line */}
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-px bg-gold/40" />

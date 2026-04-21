@@ -162,33 +162,7 @@ export function Testimonial() {
           </div>
         )}
 
-        {/* Trust Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 md:mt-20 pt-8 md:pt-12 border-t border-cream/10"
-        >
-          <p className="text-center text-cream/40 text-xs md:text-sm mb-6 md:mb-8">
-            Confían en nosotras
-          </p>
-          {/* Mobile: Horizontal scroll */}
-          <div className="flex md:hidden gap-8 overflow-x-auto pb-2 -mx-4 px-4 justify-start scrollbar-hide">
-            {["OSDE", "Swiss Medical", "Galeno", "IOMA", "PAMI"].map((brand) => (
-              <span key={brand} className="text-sm font-serif tracking-wider text-cream/30 flex-shrink-0">
-                {brand}
-              </span>
-            ))}
-          </div>
-          {/* Desktop: Centered */}
-          <div className="hidden md:flex flex-wrap items-center justify-center gap-12 text-cream/30">
-            <span className="text-lg font-serif tracking-wider">OSDE</span>
-            <span className="text-lg font-serif tracking-wider">Swiss Medical</span>
-            <span className="text-lg font-serif tracking-wider">Galeno</span>
-            <span className="text-lg font-serif tracking-wider">IOMA</span>
-            <span className="text-lg font-serif tracking-wider">PAMI</span>
-          </div>
-        </motion.div>
+       
       </div>
     </section>
   )

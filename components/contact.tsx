@@ -26,9 +26,9 @@ export function Contact() {
               Contacto
             </span>
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl text-charcoal mt-3 md:mt-4 mb-6 md:mb-8 leading-tight">
-              Consultá tu caso{" "}
-              <span className="italic text-gold">sin compromiso</span>
+              Consultá tu caso
             </h2>
+       
 
             <p className="text-muted-foreground text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
               Se pueden comunicar por WhatsApp para coordinar una consulta personal 
@@ -37,7 +37,7 @@ export function Contact() {
 
             {/* Main CTA - WhatsApp */}
             <motion.a
-              href="https://wa.me/5491112345678?text=Hola,%20quisiera%20consultar%20sobre%20mi%20caso"
+              href="https://wa.me/5491124582489?text=Hola,%20quisiera%20consultar%20sobre%20mi%20caso"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs md:text-sm text-muted-foreground">Teléfono</p>
-                  <p className="text-foreground font-medium text-sm md:text-base">+54 11 1234-5678</p>
+                  <p className="text-foreground font-medium text-sm md:text-base">11 2458-2489</p>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs md:text-sm text-muted-foreground">Email</p>
-                  <p className="text-foreground font-medium text-sm md:text-base break-all">contacto@latorresuarez.com</p>
+                  <p className="text-foreground font-medium text-sm md:text-base break-all">info@estudiolatorresuarez.com.ar</p>
                 </div>
               </div>
 
@@ -85,7 +85,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs md:text-sm text-muted-foreground">Ubicación</p>
-                  <p className="text-foreground font-medium text-sm md:text-base">Buenos Aires, Argentina</p>
+                  <p className="text-foreground font-medium text-sm md:text-base">San Martin 869, Quilmes, Buenos Aires</p>
                 </div>
               </div>
             </motion.div>
@@ -101,8 +101,8 @@ export function Contact() {
                 Atención personalizada
               </p>
               <p className="text-muted-foreground text-xs md:text-sm mt-1 md:mt-2">
-                Consultas presenciales y por videollamada. Coordinamos un horario 
-                que se adapte a tus necesidades.
+                Horarios de atención: lunes a viernes de 10 a 18 horas. Consultas
+                presenciales y por videollamada con coordinación previa.
               </p>
             </motion.div>
           </motion.div>
@@ -128,10 +128,10 @@ export function Contact() {
                   className="text-center"
                 >
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LATORRE%20SUAREZ%20LOGO-02-isxjqMBDcp4HgnaLvI5DxIXlpSNSqB.png"
+                    src="/logo.png"
                     alt="Latorre & Suárez"
-                    width={200}
-                    height={200}
+                    width={150}
+                    height={150}
                     className="mx-auto mb-8"
                   />
                   <h3 className="font-serif text-2xl md:text-3xl text-gold tracking-wide">

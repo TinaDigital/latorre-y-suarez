@@ -6,16 +6,15 @@ import Link from "next/link"
 import { Instagram, Linkedin, MessageCircle } from "lucide-react"
 
 const navLinks = [
-  { href: "#nosotras", label: "Nosotras" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#amparo", label: "El Amparo" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/about", label: "Nosotras" },
+  { href: "/#servicios", label: "Servicios" },
+  { href: "/#amparo", label: "El Amparo" },
+  { href: "/#contacto", label: "Contacto" },
 ]
 
 const socialLinks = [
-  { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://wa.me/5491112345678", icon: MessageCircle, label: "WhatsApp" },
+  { href: "https://www.instagram.com/latorresuarez.abogadas/", icon: Instagram, label: "Instagram" },
+  { href: "https://wa.me/5491124582489", icon: MessageCircle, label: "WhatsApp" },
 ]
 
 export function Footer() {
@@ -28,10 +27,10 @@ export function Footer() {
           <div className="text-center mb-10">
             <Link href="/" className="inline-flex flex-col items-center gap-3 mb-4">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LATORRE%20SUAREZ%20LOGO-02-isxjqMBDcp4HgnaLvI5DxIXlpSNSqB.png"
+                src="/logo.png"
                 alt="Latorre & Suárez"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
               />
               <div>
                 <span className="block text-gold font-serif text-lg tracking-wide">
@@ -62,9 +61,9 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="text-center space-y-2 text-sm text-cream/60 mb-8">
-            <p>+54 11 1234-5678</p>
-            <p>contacto@latorresuarez.com</p>
-            <p>Buenos Aires, Argentina</p>
+            <p>11 2458-2489</p>
+            <p>info@estudiolatorresuarez.com.ar</p>
+            <p>San Martin 869, Quilmes, Buenos Aires</p>
           </div>
 
           {/* Social Links - Centered */}
@@ -143,9 +142,9 @@ export function Footer() {
                 Contacto
               </h4>
               <ul className="space-y-3 text-sm text-cream/60">
-                <li>+54 11 1234-5678</li>
-                <li>contacto@latorresuarez.com</li>
-                <li>Buenos Aires, Argentina</li>
+                <li>11 2458-2489</li>
+                <li>info@estudiolatorresuarez.com.ar</li>
+                <li>San Martin 869, Quilmes, Buenos Aires</li>
               </ul>
               
               {/* Social Links */}
@@ -173,7 +172,7 @@ export function Footer() {
               © {new Date().getFullYear()} Latorre & Suárez Abogadas. Todos los derechos reservados.
             </p>
             <p>
-              Derecho a la Salud • Amparos • Buenos Aires, Argentina
+              Derecho a la Salud • Amparos • Quilmes, Buenos Aires
             </p>
           </div>
         </div>
