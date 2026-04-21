@@ -2,8 +2,14 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Shield, Heart, FileCheck, Users, ChevronRight, ArrowRight, ChevronDown } from "lucide-react"
+import { Shield, Heart, FileCheck, Users, ChevronRight, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const services = [
   {
@@ -56,19 +62,18 @@ export function Services() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-50px" })
   const [activeService, setActiveService] = useState(0)
-  const [mobileExpandedService, setMobileExpandedService] = useState<number | null>(0)
 
   return (
     <section id="servicios" className="py-16 md:py-32 bg-cream relative">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, #D4A24C 1px, transparent 0)`,
           backgroundSize: '40px 40px'
         }} />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6" ref={ref}>
+      <div className="relative z-10 container mx-auto px-4 md:px-6" ref={ref}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -89,65 +94,46 @@ export function Services() {
           </p>
         </motion.div>
 
-        {/* Mobile Services - Accordion Style */}
-        <div className="md:hidden space-y-3 mb-12">
+        {/* Mobile Services — Radix Accordion (touch / a11y) */}
+        <Accordion
+          type="single"
+          collapsible
+          className="md:hidden mb-12 space-y-3"
+        >
           {services.map((service, index) => (
-            <motion.div
+            <AccordionItem
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card border border-border overflow-hidden"
+              value={`service-${index}`}
+              className="overflow-hidden rounded-none border border-border bg-card"
             >
-              <button
-                onClick={() => setMobileExpandedService(mobileExpandedService === index ? null : index)}
-                className="w-full p-4 flex items-center justify-between text-left"
-                aria-expanded={mobileExpandedService === index}
-                aria-controls={`service-mobile-panel-${index}`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`p-2 transition-all duration-300 ${
-                    mobileExpandedService === index ? 'bg-gold text-cream' : 'bg-gold/10 text-gold'
-                  }`}>
-                    <service.icon className="w-5 h-5" />
+              <AccordionTrigger className="group items-center gap-3 px-4 py-4 hover:no-underline [&>svg]:size-5 [&>svg]:shrink-0 [&>svg]:text-gold data-[state=open]:[&>svg]:rotate-180">
+                <div className="flex min-w-0 flex-1 items-center gap-3 text-left">
+                  <div className="shrink-0 bg-gold/10 p-2 text-gold transition-all duration-300 group-data-[state=open]:bg-gold group-data-[state=open]:text-cream">
+                    <service.icon className="h-5 w-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-medium text-charcoal text-sm">{service.title}</h3>
                     <p className="text-xs text-muted-foreground">{service.subtitle}</p>
                   </div>
                 </div>
-                <ChevronDown className={`w-5 h-5 text-gold transition-transform duration-300 ${
-                  mobileExpandedService === index ? 'rotate-180' : ''
-                }`} />
-              </button>
-              
-              {mobileExpandedService === index && (
-                <motion.div
-                  id={`service-mobile-panel-${index}`}
-                  initial={{ opacity: 0, y: -6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-4 pb-4 pt-2 border-t border-border/50">
-                    <div className="flex items-baseline gap-2 mb-3">
-                      <span className="text-3xl font-serif text-gold">{service.stat}</span>
-                      <span className="text-xs text-muted-foreground">{service.statLabel}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {service.features.map((feature) => (
-                        <span key={feature} className="px-3 py-1.5 bg-gold/10 text-charcoal text-xs font-medium">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </motion.div>
+              </AccordionTrigger>
+              <AccordionContent className="border-t border-border/50 px-4 pb-4 pt-2 text-left">
+                <div className="flex items-baseline gap-2 mb-3">
+                  <span className="text-3xl font-serif text-gold">{service.stat}</span>
+                  <span className="text-xs text-muted-foreground">{service.statLabel}</span>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {service.features.map((feature) => (
+                    <span key={feature} className="px-3 py-1.5 bg-gold/10 text-charcoal text-xs font-medium">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
 
         {/* Desktop Services - Interactive Display */}
         <div className="hidden md:grid lg:grid-cols-12 gap-8 mb-24">
