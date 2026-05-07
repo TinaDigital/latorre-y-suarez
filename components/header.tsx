@@ -17,6 +17,20 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  const handleMobileConsultClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    setIsMobileMenuOpen(false)
+
+    if (window.location.pathname === "/") {
+      const contactSection = document.getElementById("contacto")
+      contactSection?.scrollIntoView({ behavior: "smooth", block: "start" })
+      window.history.replaceState(null, "", "/#contacto")
+      return
+    }
+
+    window.location.assign("/#contacto")
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
@@ -178,7 +192,7 @@ export function Header() {
                 >
                   <Link
                     href="/#contacto"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={handleMobileConsultClick}
                     className="inline-flex items-center gap-2 bg-gold text-charcoal px-10 py-4 text-lg font-medium active:bg-gold-dark transition-all duration-300"
                   >
                     Consultar Ahora
