@@ -43,7 +43,7 @@ const services = [
     icon: Users,
     title: "Asesoramiento Integral",
     subtitle: "Atención personal y dedicada",
-    description: "Acompañamos personalmente cada caso, desde la primera consulta hasta la resolución favorable, manteniendo comunicación directa y constante. Siempre vas a ser atendido por la misma abogada: si comenzaste con nosotras, seguís con nosotras, sin intermediarios.",
+    description: "Acompañamos personalmente cada caso, desde la primera consulta hasta la resolución, manteniendo comunicación directa y constante. Siempre vas a ser atendido por la misma abogada: si comenzaste con nosotras, seguís con nosotras, sin intermediarios.",
     features: ["Consultas personales", "Videollamadas", "Comunicación directa y continua"],
     stat: "100%",
     statLabel: "Atención personalizada"

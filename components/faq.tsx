@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "¿Qué pasa si mi obra social no responde a los reclamos?",
-    answer: "La falta de respuesta o demora excesiva se considera una negativa. pero sera necesario realizar una intimacion formal y para esto necesitas nuestro asesoramiento para que se realice de manera correcta y eficiente "
+    answer: "La falta de respuesta o demora excesiva se considera una negativa, pero será necesario realizar una intimación formal y para esto necesitás nuestro asesoramiento, para que se realice de manera correcta y eficiente "
   }
 ]
 

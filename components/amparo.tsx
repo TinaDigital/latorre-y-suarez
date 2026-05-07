@@ -16,7 +16,7 @@ const steps = [
     number: "02",
     icon: Scale,
     title: "Consulta Presencial",
-    description: "Traés la documentación, la revisamos juntas y realizamos la intimación previa a la obra social."
+    description: "Traés la documentación, la revisamos y realizamos la intimación previa a la obra social. Te acompañamos en todo el proceso."
   },
   {
     number: "03",
